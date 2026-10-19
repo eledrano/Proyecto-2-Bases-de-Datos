@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Credenciales locales de cada integrante (no se suben)
+app/config.py
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Archivos temporales de Word/Excel
+~$*
