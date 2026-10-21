@@ -5,7 +5,8 @@
 DB_CONFIG = {
     "host": "localhost",
     "port": "5432",
-    "dbname": "imax",
+    "dbname": "cine",
     "user": "postgres",
     "password": "postgres",
+    "options": "-c search_path=prototipo",
 }
