@@ -96,7 +96,7 @@ CREATE TABLE tarifa (
 CREATE TABLE bloqueo_asiento (
     id_bloqueo        SERIAL      PRIMARY KEY,
     fecha_hora_inicio TIMESTAMP   NOT NULL DEFAULT NOW(),
-    fecha_hora_expira TIMESTAMP   NOT NULL,   -- derivado: inicio + 2 minutos
+    fecha_hora_expira TIMESTAMP   NOT NULL,
     estado            VARCHAR(15) NOT NULL DEFAULT 'activo',
     id_funcion        INT         NOT NULL,
     id_asiento        INT         NOT NULL,
@@ -118,13 +118,13 @@ CREATE TABLE compra (
     id_compra           SERIAL        PRIMARY KEY,
     fecha_hora          TIMESTAMP     NOT NULL DEFAULT NOW(),
     canal               VARCHAR(10)   NOT NULL,
-    subtotal            NUMERIC(10,2) NOT NULL DEFAULT 0,   -- derivado
-    descuento           NUMERIC(10,2) NOT NULL DEFAULT 0,   -- derivado
+    subtotal            NUMERIC(10,2) NOT NULL DEFAULT 0,
+    descuento           NUMERIC(10,2) NOT NULL DEFAULT 0,
     cargo_servicio      NUMERIC(10,2) NOT NULL DEFAULT 0,
-    total               NUMERIC(10,2) NOT NULL DEFAULT 0,   -- derivado
+    total               NUMERIC(10,2) NOT NULL DEFAULT 0,
     estado              VARCHAR(15)   NOT NULL DEFAULT 'pendiente',
     id_usuario_cliente  INT           NOT NULL,
-    id_usuario_vendedor INT,                                -- solo en ventas de taquilla
+    id_usuario_vendedor INT, 
     CONSTRAINT ck_compra_canal CHECK (canal IN ('online', 'taquilla')),
     CONSTRAINT ck_compra_estado CHECK (estado IN ('pendiente', 'pagada', 'rechazada', 'reembolsada')),
     CONSTRAINT ck_compra_montos CHECK (subtotal >= 0 AND descuento >= 0 AND cargo_servicio >= 0 AND total >= 0),
@@ -158,7 +158,6 @@ CREATE TABLE pago (
         REFERENCES compra (id_compra) ON DELETE RESTRICT
 );
 
--- Incluye la relación ternaria "emite" (funcion – asiento – boleto) y su atributo codigo_qr
 CREATE TABLE boleto (
     id_boleto         SERIAL        PRIMARY KEY,
     codigo_qr         VARCHAR(64)   NOT NULL,

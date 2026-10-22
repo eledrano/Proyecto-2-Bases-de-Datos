@@ -131,12 +131,12 @@ INSERT INTO pago (metodo_pago, monto, estado, referencia_pasarela, fecha_hora, i
     ('paypal', 13500, 'aprobado', 'SIM-0004', '2026-10-20 12:02', 4);
  
 INSERT INTO boleto (codigo_qr, precio, estado, fecha_emision, id_funcion, id_asiento, id_tarifa, id_compra) VALUES
-    ('QR-0000001', 8500, 'valido', '2026-10-20 10:15', 1, 33, 16, 1),
-    ('QR-0000002', 8500, 'valido', '2026-10-20 10:15', 1, 34, 16, 1),
-    ('QR-0000003', 5500, 'valido', '2026-10-20 14:30', 3, 60, 6, 2),
-    ('QR-0000004', 5500, 'valido', '2026-10-20 14:30', 3, 61, 6, 2),
-    ('QR-0000005', 7000, 'usado',  '2026-10-20 12:02', 5, 145, 11, 4),
-    ('QR-0000006', 6000, 'valido', '2026-10-20 12:02', 5, 146, 12, 4);
+    ('QR-1-33-V-7K2Q', 8500, 'valido', '2026-10-20 10:15', 1, 33, 16, 1),
+    ('QR-1-34-V-M9XA', 8500, 'valido', '2026-10-20 10:15', 1, 34, 16, 1),
+    ('QR-3-60-PL-4TB8', 5500, 'valido', '2026-10-20 14:30', 3, 60, 6, 2),
+    ('QR-3-61-PL-Q2ZD', 5500, 'valido', '2026-10-20 14:30', 3, 61, 6, 2),
+    ('QR-5-145-PC-H6WE', 7000, 'usado',  '2026-10-20 12:02', 5, 145, 11, 4),
+    ('QR-5-146-PC-R3NJ', 6000, 'valido', '2026-10-20 12:02', 5, 146, 12, 4);
  
 --- Bitácoras
  
@@ -155,9 +155,9 @@ INSERT INTO asiento_auditoria_log (evento, fecha_hora, id_bloqueo) VALUES
     ('bloqueado', '2026-10-20 12:00', 6), ('comprado', '2026-10-20 12:02', 6);
  
 INSERT INTO acceso_puerta_log (codigo_leido, puerta, resultado, fecha_hora, id_boleto) VALUES
-    ('QR-0000005', 'Puerta 1', 'exitoso', '2026-10-25 19:40', 5),
-    ('QR-0000005', 'Puerta 1', 'ya_utilizada', '2026-10-25 19:45', 5),
-    ('QR-9999999', 'Puerta 1', 'no_existe', '2026-10-25 19:50', NULL);
+    ('QR-5-145-PC-H6WE', 'Puerta 1', 'exitoso', '2026-10-25 19:40', 5),
+    ('QR-5-145-PC-H6WE', 'Puerta 1', 'ya_utilizada', '2026-10-25 19:45', 5),
+    ('QR-9-999-G-XXXX', 'Puerta 1', 'no_existe', '2026-10-25 19:50', NULL);
  
 INSERT INTO admin_operacion_audit (accion, tabla_afectada, id_registro_afectado, detalle, rol, direccion_ip, fecha_hora, id_usuario) VALUES
     ('crear_funcion', 'funcion', 8, 'Programa Interestelar en IMAX Oeste el 26/10 19:30', 'administrador', '192.168.1.10', '2026-10-19 09:00', 1),
