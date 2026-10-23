@@ -9,8 +9,8 @@
 - USUARIO (id_usuario[PK], primer_nombre, primer_apellido, segundo_apellido, correo, contrasena, rol, activo)
 - TARIFA (id_tarifa[PK], tipo_entrada, zona, precio)
 - BLOQUEO_ASIENTO (id_bloqueo[PK], fecha_hora_inicio, fecha_hora_expira, estado, id_funcion[FK], id_asiento[FK], id_usuario[FK])
-- COMPRA (id_compra[PK], fecha_hora, canal, subtotal, cargo_servicio, total, estado, id_usuario_cliente[FK], id_usuario_vendedor[FK])
-- COMPRA_PROMOCIONES (id_compra[PK/FK], promoció[PK])
+- COMPRA (id_compra[PK], fecha_hora, canal, subtotal, descuento, cargo_servicio, total, estado, id_usuario_cliente[FK], id_usuario_vendedor[FK])
+- COMPRA_PROMOCIONES (id_compra[PK/FK], promoción[PK])
 - PAGO (id_pago[PK], metodo_pago, monto, estado, referencia_pasarela, fecha_hora, id_compra[FK])
 - BOLETO (id_boleto[PK], codigo_qr, precio, estado, fecha_emision, monto_reembolsado, fecha_anulacion, id_funcion[FK], id_asiento[FK], id_tarifa[FK], id_compra[FK])
 - TRANSACCION_LOG (id_log[PK], evento, monto, estado, fecha_hora, id_pago[FK])
@@ -26,7 +26,7 @@
 
 **Atributos compuestos:** `ubicacion` de CINE y `nombre` de USUARIO se separan en sus componentes simples, lo que permite filtrar la cartelera por país o ciudad.
 
-**Atributos derivados:** `fecha_hora_expira` (inicio del bloqueo + 2 minutos), `subtotal` (suma de los precios de los boletos) y `total` (subtotal − descuento + cargo por servicio) se guardan como columnas. No se ingresan manualmente: los calculan las funciones SQL de bloqueo y de compra. `fecha_hora_expira` se consulta constantemente para liberar asientos vencidos, por lo que conviene tenerla almacenada.
+**Atributos derivados:** `fecha_hora_expira` (inicio del bloqueo + 2 minutos), `subtotal` (suma de los precios de los boletos), `descuento` (calculado sobre las promociones) y `total` (subtotal − descuento + cargo por servicio) se guardan como columnas. No se ingresan manualmente: los calculan las funciones SQL de bloqueo y de compra. `fecha_hora_expira` se consulta constantemente para liberar asientos vencidos, por lo que conviene tenerla almacenada.
 
 **Doble relación usuario–compra:** como `realiza` y `vende` unen las mismas tablas, las FK se distinguen por su rol: `id_usuario_cliente` e `id_usuario_vendedor`.
 
