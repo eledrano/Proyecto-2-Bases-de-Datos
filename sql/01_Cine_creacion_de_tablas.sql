@@ -218,7 +218,7 @@ CREATE TABLE acceso_puerta_log (
     resultado    VARCHAR(20) NOT NULL,
     fecha_hora   TIMESTAMP   NOT NULL DEFAULT NOW(),
     id_boleto    INT,                     -- nulo si el código leído no existe
-    CONSTRAINT ck_acceso_resultado CHECK (resultado IN ('exitoso', 'ya_utilizada', 'fuera_de_horario', 'otra_funcion', 'no_existe')),
+    CONSTRAINT ck_acceso_resultado CHECK (resultado IN ('exitoso', 'ya_utilizada', 'fuera_de_horario', 'otra_funcion', 'no_existe', 'anulada')),
     CONSTRAINT fk_acceso_puerta_log_boleto FOREIGN KEY (id_boleto)
         REFERENCES boleto (id_boleto) ON DELETE RESTRICT
 );
