@@ -1,0 +1,115 @@
+==============================================================================
+PRUEBA DE CONCURRENCIA - DOBLE VENTA DE ASIENTOS
+Fecha: 2026-10-24 22:58:51    Hilos simultáneos: 50
+==============================================================================
+
+PRUEBA 1 - Bloqueo simultáneo: función 6 (Intensamente 2, 25/10 15:00), asiento A3 (general, id 43)
+  Hilo 01: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 02: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 03: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 04: ÉXITO     bloqueo 37 a nombre del cliente 6
+  Hilo 05: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 06: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 07: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 08: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 09: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 10: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 11: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 12: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 13: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 14: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 15: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 16: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 17: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 18: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 19: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 20: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 21: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 22: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 23: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 24: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 25: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 26: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 27: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 28: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 29: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 30: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 31: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 32: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 33: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 34: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 35: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 36: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 37: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 38: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 39: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 40: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 41: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 42: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 43: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 44: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 45: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 46: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 47: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 48: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 49: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Hilo 50: RECHAZADO Asiento bloqueado: otro usuario lo está comprando en este momento
+  Resumen: 1 ÉXITO y 49 rechazados de 50 hilos
+  Verificación en la BD: 1 bloqueo(s) activo(s) para ese asiento
+
+PRUEBA 2 - Inserción simultánea del boleto: función 6, asiento A4 (general, id 44)
+  Hilo 01: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 02: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 03: COMMIT    compra 38, boleto QR-6-44-G-HVKY
+  Hilo 04: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 05: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 06: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 07: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 08: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 09: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 10: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 11: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 12: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 13: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 14: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 15: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 16: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 17: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 18: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 19: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 20: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 21: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 22: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 23: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 24: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 25: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 26: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 27: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 28: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 29: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 30: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 31: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 32: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 33: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 34: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 35: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 36: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 37: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 38: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 39: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 40: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 41: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 42: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 43: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 44: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 45: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 46: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 47: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 48: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 49: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Hilo 50: ROLLBACK  duplicate key value violates unique constraint "uq_boleto_funcion_asiento"
+  Resumen: 1 COMMIT y 49 rechazados de 50 hilos
+  Verificación en la BD: 1 boleto(s) vigente(s) para ese asiento y 1 compra(s) nueva(s) (las 49 restantes se deshicieron con ROLLBACK)
+
+RESULTADO: APROBADO - no hubo doble venta
+==============================================================================
