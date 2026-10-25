@@ -6,7 +6,7 @@ DB_CONFIG = {
     "host": "localhost",
     "port": "5432",
     "dbname": "cine",
-    "user": "postgres",
-    "password": "postgres",
+    "user": "creador",
+    "password": "ProyectoCine2026",
     "options": "-c search_path=prototipo",
 }
