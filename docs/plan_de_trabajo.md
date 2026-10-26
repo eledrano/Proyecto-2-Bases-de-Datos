@@ -14,7 +14,7 @@ Entrega: **domingo 25/10/2026, 23:59** (meta interna: dejar todo en `main` a las
 - Datos de prueba.
 - Script de prueba de concurrencia en Python (20 a 50 hilos intentando el mismo asiento).
 
-### P1 — Documento técnico: factibilidad, requisitos, operación y rendimiento (Fases 1, 2 y 5)
+### Vinicio — Documento técnico: factibilidad, requisitos, operación y rendimiento (Fases 1, 2 y 5)
 - Dictamen técnico de rechazo de la infraestructura legada.
 - Factibilidad técnica, económica y operativa.
 - Comparativa de al menos dos proveedores cloud (base de datos, almacenamiento de logs a 5 años, balanceador/WAF), con fuentes citadas.
@@ -26,7 +26,7 @@ Entrega: **domingo 25/10/2026, 23:59** (meta interna: dejar todo en `main` a las
 - Índices, las 4 consultas analíticas y la comparativa EXPLAIN ANALYZE antes/después.
 - Ensamblar el documento técnico final.
 
-### P2 — Interfaz gráfica en Python (CustomTkinter)
+### Winston — Interfaz gráfica en Python (CustomTkinter)
 - Conexión a la BD y pantalla de inicio de sesión por rol.
 - Vista de cartelera con filtros (ubicación, fecha, género).
 - Mapa interactivo de la sala: verde (disponible), gris (ocupado), amarillo (bloqueado), azul (seleccionado), con temporizador de 2 minutos.
@@ -38,7 +38,7 @@ Entrega: **domingo 25/10/2026, 23:59** (meta interna: dejar todo en `main` a las
 
 ## Cronograma
 
-| Día | Luis | P1 | P2 |
+| Día | Luis | Vinicio | Winston |
 |---|---|---|---|
 | **Lun 19** | Reunión de arranque (todos): clonar repo, crear ramas, acordar lista de entidades y nombres de tablas. DER conceptual. | Dictamen de rechazo. Requerimientos funcionales y no funcionales. | Entorno (requerimientos.txt, config.py). Esqueleto de la app: conexión, login por rol y navegación. |
 | **Mar 20** | Modelo lógico/relacional. Script DDL con restricciones. | Volúmenes esperados y tabla de almacenamiento a 5 años. | Vista de cartelera con filtros. |
